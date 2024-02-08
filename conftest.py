@@ -44,4 +44,6 @@ def browser(request):
 
     driver.base_url = base_url
 
-    return driver
+    yield driver
+
+    driver.close()
